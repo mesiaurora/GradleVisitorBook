@@ -1,7 +1,10 @@
 package Model;
 
+import org.w3c.dom.stylesheets.LinkStyle;
+
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name="Entries")
@@ -12,7 +15,7 @@ public class VisitorEntry {
     @Column(name="entry_id")
     private int id;
 
-    @Column(name="visitor_id")
+    @Column(name="visitorId")
     @OneToMany(mappedBy = "Visitors")
     private int visitorId;
 
@@ -36,9 +39,12 @@ public class VisitorEntry {
     @Temporal(TemporalType.DATE)
     private Date date;
 
-    // Default constructor
-    private VisitorEntry() {
 
+    List<Song> recommendedSongs;
+
+
+    private VisitorEntry() {
+        // Default constructor
     }
 
     // Constructor
@@ -46,6 +52,7 @@ public class VisitorEntry {
         this.visitorId = visitorId;
         this.bookId = bookId;
     }
+
 
     /**
      * Getters and setters
@@ -104,5 +111,17 @@ public class VisitorEntry {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public List<Song> getRecommendedSongs() {
+        return recommendedSongs;
+    }
+
+    public void setRecommendedSongs(List<Song> recommendedSongs) {
+        this.recommendedSongs = recommendedSongs;
+    }
+
+    public void addSong(Song song) {
+        recommendedSongs.add(song);
     }
 }

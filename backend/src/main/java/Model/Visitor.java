@@ -8,7 +8,7 @@ public class Visitor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="visitor_id")
+    @Column(name="visitorId")
     private Integer id;
 
     @Column(name="name")

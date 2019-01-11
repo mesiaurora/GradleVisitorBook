@@ -12,10 +12,10 @@ import java.util.List;
 public interface VisitorEntryRepository extends CrudRepository<VisitorEntry, Integer> {
 
 
-    @Query(value = "SELECT * FROM entries WHERE visitor_id", nativeQuery = true)
+    @Query(value = "SELECT * FROM entries WHERE visitor_id = (:visitorId)", nativeQuery = true)
     public List<VisitorEntry> findEntriesForUser(@Param("visitorId") int id);
 
-    @Query(value = "SELECT * FROM entries WHERE date", nativeQuery = true)
+    @Query(value = "SELECT * FROM entries WHERE date = (:date)", nativeQuery = true)
     public List<VisitorEntry> findEntriesSubmittedBeforeDate(@Param("date")Date date);
 
     // TODO: all entries
