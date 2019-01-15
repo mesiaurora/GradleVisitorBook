@@ -1,0 +1,22 @@
+
+<div class="col-md-6">
+  <h2> Song</h2>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th class="hidden">Id</th>
+      <th>Artist</th>
+      <th>Song title</th>
+      <th>Spotify link</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let song of songs">
+      <td class="hidden">{{song.id}}</td>
+      <td>{{song.artist}}</td>
+      <td>{{song.songTitle}}</td>
+      <td>{{song.spotifyLink}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,30 @@
+
+<div class="col-md-6">
+  <h2> Entry Details</h2>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th class="hidden">Id</th>
+      <th>Name</th>
+      <th>Title</th>
+      <th>Memory</th>
+      <th>Greeting</th>
+      <th>Message</th>
+      <th>Date</th>
+      <th>Song</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let entry of entries">
+      <td class="hidden">{{entry.id}}</td>
+      <td>{{entry.name}}</td>
+      <td>{{entry.title}}</td>
+      <td>{{entry.memory}}</td>
+      <td>{{entry.greeting}}</td>
+      <td>{{entry.message}}</td>
+      <td>{{entry.date}}</td>
+      <td>{{entry.song}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

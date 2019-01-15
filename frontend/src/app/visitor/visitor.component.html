@@ -1,0 +1,20 @@
+
+<div class="col-md-6">
+  <h2> Visitor</h2>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Relationship</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let visitor of visitors">
+      <td class="hidden">{{visitor.id}}</td>
+      <td>{{visitor.name}}</td>
+      <td>{{visitor.relationship}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
