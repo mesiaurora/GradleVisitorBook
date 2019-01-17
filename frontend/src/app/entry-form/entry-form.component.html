@@ -1,33 +1,40 @@
+<h3> Write in visitor book </h3>
 
-<div class="row">
-  <div class="col-md-6">
-    <h1>Login </h1>
-    <form>
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="name" class="form-control" id="name" name="name" [(ngModel)]="name">
-      </div>
-      <div class="form-group">
-        <label for="title">Title:</label>
-        <input type="title" class="form-control" id="title" name="title" [(ngModel)]="title">
-      </div>
-      <div class="form-group">
-        <label for="message">Message:</label>
-        <input type="message" class="form-control" id="message" name="message" [(ngModel)]="message">
-      </div>
-      <div class="form-group">
-        <label for="memory">Memory:</label>
-        <input type="memory" class="form-control" id="memory" name="memory" [(ngModel)]="memory">
-      </div>
-      <div class="form-group">
-        <label for="song">Song:</label>
-        <input type="song" class="form-control" id="song" name="song" [(ngModel)]="song">
-      </div>
-      <div class="form-group">
-        <label for="date">Date:</label>
-        <input type="date" class="form-control" id="date" name="date" [(ngModel)]="date">
-      </div>
-      <button class="btn btn-default" (click)="send()">Send</button>
-    </form>
-  </div>
-</div>
+<p>
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input matInput placeholder="Write a name">
+  </mat-form-field>
+</p>
+
+<p>
+  <mat-form-field appearance="fill">
+    <mat-label>Relationship</mat-label>
+    <input matInput placeholder="Relationship">
+  </mat-form-field>
+</p>
+
+<p>
+  <mat-form-field appearance="fill">
+    <mat-label>Title</mat-label>
+    <input matInput placeholder="Title">
+  </mat-form-field>
+</p>
+
+<p>
+  <mat-form-field appearance="fill">
+    <mat-label>Song</mat-label>
+    <input matInput placeholder="Song">
+  </mat-form-field>
+</p>
+
+<p>
+  <mat-form-field>
+    <textarea matInput placeholder="Message"></textarea>
+  </mat-form-field>
+</p>
+
+<a mat-stroked-button color="accent" routerLink="/visitor-book" routerLinkActive="active">Save</a>
+
+<router-outlet></router-outlet>
+

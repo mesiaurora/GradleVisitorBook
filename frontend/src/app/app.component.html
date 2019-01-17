@@ -1,48 +1,48 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
 
 
 
-  <html ng-app="visitorBookApp">
-    <h1>
-      Welcome to {{ title }}!
-    </h1>
-    <head>
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-    </head>
-    <body ng-controller="testController">
-
-
-    <div class="button-write" style="text-align:center">
-      <!--<button mat-raised-button color="accent">Write in visitor book</button>-->
-      <a mat-stroked-button color="accent" routerLink="/entry-form.component.html" routerLinkActive="active">Write in visitor book</a>
-    </div>
-    <div class="button-read-entries" style="text-align:center">
-      <!--<button mat-raised-button color="accent">Read all entries</button>-->
-      <a mat-stroked-button color="accent" routerLink="/" routerLinkActive="active">Read all entries</a>
-    </div>
-    <div class="button-songs" style="text-align:center">
-      <!--<button mat-raised-button color="accent">See all songs</button>-->
-      <a mat-stroked-button color="accent" routerLink="/" routerLinkActive="active">See all songs</a>
-    </div>
-    <div class="button-find-visitor" style="text-align:center">
-      <!--<button mat-raised-button color="accent">Find by visitor</button>-->
-      <a mat-stroked-button color="accent" routerLink="/" routerLinkActive="active">Find by visitor</a>
-    </div>
-
-    <script src="script.js"></script>
-    </body>
-  </html>
-
-  <ul>
-
-  </ul>
-
-  <router-outlet></router-outlet>
-
+<div class="row">
+  <div class="col-md-12">
+    <app-header-bar> Loading header </app-header-bar>
+  </div>
+</div>
+<div>
+  <mat-form-field>
+  <mat-select placeholder="Select from visitors">
+    <mat-option *ngFor="let visitor of visitors"
+                value={{visitor.visitorId}}>>
+      {{visitor.name}}
+    </mat-option>
+  </mat-select>
+  </mat-form-field>
+  <br>
+  <br>
+  <a mat-stroked-button color="accent" routerLink="/visitor-book" routerLinkActive="active">Read by visitor</a>
 </div>
 
 
+<!--<div>-->
+  <!--<label>Language:</label>-->
+  <!--<select  [formControl]="sampleform.controls['languageID']">-->
+    <!--<option value="0">&#45;&#45;Select&#45;&#45;</option>-->
+    <!--<option *ngFor="let lang of languages"-->
+            <!--value={{lang.languageID}}>-->
+      <!--{{lang.language}}-->
+    <!--</option>-->
+  <!--</select>-->
+<!--</div>-->
+
+<!--<router-outlet></router-outlet>-->
 
 
-<!--<button ng-click="getRequest()">Write in visitor book</button>-->
+
+
+
+
+
+
+
+
+
+
+

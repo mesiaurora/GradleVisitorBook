@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.Visitor;
+import Model.VisitorBook;
 import Model.VisitorEntry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,8 +17,21 @@ public class VisitorBookController {
     @Autowired
     VisitorRepository visitorRepository;
 
+    @Autowired
+    VisitorBookRepository visitorBookRepository;
+
     public VisitorBookController() {
 
+    }
+
+    @GetMapping("/getVisitorBooks")
+    public List<VisitorBook> getVisitorBooks() {
+        return visitorBookRepository.findAllBook();
+    }
+
+    @GetMapping("/getVisitors")
+    public List<Visitor> getVisitors() {
+        return visitorRepository.findAllVisitors();
     }
 
     @PutMapping("/addEntry")
@@ -45,4 +59,6 @@ public class VisitorBookController {
 
         return allEntries;
     }
+
+
 }

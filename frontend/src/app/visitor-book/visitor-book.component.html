@@ -1,3 +1,42 @@
-<p>
-  visitor-book works!
-</p>
+<div style="text-align:center">
+
+
+
+  <html ng-app="visitorBookApp">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  </head>
+  <body ng-controller="testController">
+
+
+  <div class="button-write" style="text-align:center">
+    <!--<button mat-raised-button color="accent">Write in visitor book</button>-->
+    <a mat-stroked-button color="accent" routerLink="/entry-form.component.html" routerLinkActive="active">Write in visitor book</a>
+  </div>
+  <div class="button-read-entries" style="text-align:center">
+    <!--<button mat-raised-button color="accent">Read all entries</button>-->
+    <a mat-stroked-button color="accent" routerLink="/" routerLinkActive="active">Read all entries</a>
+  </div>
+  <div class="button-songs" style="text-align:center">
+    <!--<button mat-raised-button color="accent">See all songs</button>-->
+    <a mat-stroked-button color="accent" routerLink="/" routerLinkActive="active">See all songs</a>
+  </div>
+  <div class="button-find-visitor" style="text-align:center">
+    <!--<button mat-raised-button color="accent">Find by visitor</button>-->
+    <a mat-stroked-button color="accent" routerLink="/" routerLinkActive="active">Find by visitor</a>
+  </div>
+
+  <script src="script.js"></script>
+  </body>
+  </html>
+
+  <ul>
+
+  </ul>
+
+  <router-outlet></router-outlet>
+
+</div>

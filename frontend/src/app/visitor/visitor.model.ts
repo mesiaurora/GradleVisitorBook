@@ -1,6 +1,6 @@
 export class Visitor {
 
-  id: number;
+  visitorId: number;
   name: string;
   relationship: string;
 
