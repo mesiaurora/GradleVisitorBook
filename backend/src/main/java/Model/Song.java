@@ -4,6 +4,9 @@ import javax.persistence.*;
 import java.net.URI;
 import java.util.Optional;
 
+/**
+ * @author keamesi
+ */
 @Entity
 @Table(name="Songs")
 public class Song {

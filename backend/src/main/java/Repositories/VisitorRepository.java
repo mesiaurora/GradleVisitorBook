@@ -7,6 +7,9 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
+/**
+ * @author keamesi
+ */
 public interface VisitorRepository extends CrudRepository<Visitor, Integer> {
 
 

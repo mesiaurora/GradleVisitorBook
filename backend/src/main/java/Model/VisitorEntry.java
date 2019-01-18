@@ -1,11 +1,12 @@
 package Model;
 
-import org.w3c.dom.stylesheets.LinkStyle;
-
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * @author keamesi
+ */
 @Entity
 @Table(name="Entries")
 public class VisitorEntry {

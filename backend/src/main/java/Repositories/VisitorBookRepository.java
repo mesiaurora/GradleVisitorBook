@@ -6,6 +6,9 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
+/**
+ * @author keamesi
+ */
 public interface VisitorBookRepository extends CrudRepository<VisitorBook, Integer> {
 
     // TODO: find all entries

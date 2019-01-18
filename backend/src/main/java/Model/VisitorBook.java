@@ -4,6 +4,9 @@ import javax.persistence.*;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author keamesi
+ */
 @Entity
 @Table(name="VisitorBooks")
 public class VisitorBook {

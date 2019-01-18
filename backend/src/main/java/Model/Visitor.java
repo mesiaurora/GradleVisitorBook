@@ -2,6 +2,9 @@ package Model;
 
 import javax.persistence.*;
 
+/**
+ * @author keamesi
+ */
 @Entity
 @Table(name="Visitors")
 public class Visitor {

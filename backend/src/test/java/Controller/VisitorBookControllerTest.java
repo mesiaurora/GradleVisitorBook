@@ -17,6 +17,9 @@ import org.springframework.web.context.WebApplicationContext;
 
 import static org.junit.Assert.*;
 
+/**
+ * @author keamesi
+ */
 @RunWith(SpringRunner.class)
 @WebMvcTest(value = VisitorBookController.class)
 public class VisitorBookControllerTest {
@@ -38,7 +41,7 @@ public class VisitorBookControllerTest {
 
     @MockBean
     private VisitorBookRepository bookRepo;
-    
+
     @Before
     public void setUp() {
         mockMvc = MockMvcBuilders.webAppContextSetup(webAppContext).build();
