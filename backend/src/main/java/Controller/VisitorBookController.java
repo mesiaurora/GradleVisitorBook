@@ -3,6 +3,8 @@ package Controller;
 import Model.Visitor;
 import Model.VisitorBook;
 import Model.VisitorEntry;
+import Repositories.VisitorBookRepository;
+import Repositories.VisitorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

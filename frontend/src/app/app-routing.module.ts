@@ -7,6 +7,7 @@ import {EntryComponent} from './entry/entry.component';
 import {SongComponent} from './song/song.component';
 import {EntryFormComponent} from './entry-form/entry-form.component';
 
+// TODO: reconsider these
 const routes: Routes = [
   {
     path: 'visitor',

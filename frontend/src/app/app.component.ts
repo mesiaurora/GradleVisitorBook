@@ -10,6 +10,8 @@ import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms'
 import { VisitorBook } from './visitor-book/visitor-book.model';
 import { Visitor } from './visitor/visitor.model';
 import { VisitorService } from './visitor/visitor.service';
+import { Entry } from './entry.model'
+import { EntryComponent } from './entry/entry.component'
 
 export interface Testing {
   value: string;
@@ -23,18 +25,18 @@ export interface Testing {
 
 })
 
-
 export class AppComponent implements OnInit {
-
 
   public books: VisitorBook[];
   public visitors: Visitor[];
+  public entries: Entry[];
   sampleform: FormGroup;
   errorMessage: string;
 
+  // TODO: remove this when fully tested
   testing: Testing[] = [{value: 'Camel'}, {value: 'Horse'}, {value: 'Elephant'}]
 
-  constructor(private visitorService : VisitorService, fb: FormBuilder) {
+  constructor(private visitorService : VisitorService, entryService : EntryService, fb: FormBuilder) {
     this.sampleform = fb.group({
             'visitorId': [null] })
   }
@@ -42,10 +44,17 @@ export class AppComponent implements OnInit {
   ngOnInit()
   {
    this.getVisitors();
+   this.getEntries();
   }
 
+  // Get list of visitors to fill a dropdown list
   getVisitors() {
     this.visitorService.getVisitor().subscribe(res => this.visitors = res, error => this.errorMessage = <any>error);
+  }
+
+  // Get entries for the visitor book
+  getEntries() {
+    this.entryService.getEntries().subscrive(res => this.entries = res, error => this.errorMessage = <any>error);
   }
 
 }

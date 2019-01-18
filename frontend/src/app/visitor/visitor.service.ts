@@ -22,8 +22,9 @@ export class VisitorService {
   constructor(private http: Http) {
   }
 
+  // Get a list of visitors from API
   getVisitor(): Observable<Visitor[]> {
-    return this.http.get('/visitorBook//getVisitors')
+    return this.http.get('/visitorBook/getVisitors')
         .map(res => res.json())
         .catch(this.handleError);
   }
