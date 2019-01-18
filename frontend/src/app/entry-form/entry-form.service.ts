@@ -1,9 +1,16 @@
 import { Injectable } from '@angular/core';
-import { EntryComponent } from '../entry/entry.component';
-import { Entry } from '../entry/entry.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Response, RequestOptions, Headers  } from '@angular/http';
+import { Http } from '@angular/http';
 import { Observable, of } from 'rxjs';
+import 'rxjs/Rx';
 import { catchError, map, tap } from 'rxjs/operators';
+
+// Imports from own packages
+import { EntryFormComponent } from './entry-form.component'
+import { Entry } from '../entry/entry.model';
+import { EntryService } from '../entry/entry.service';
+import { EntryComponent } from '../entry/entry.component'
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -20,8 +27,7 @@ export class EntryFormService {
   // Post an entry
   sendEntry(entry: Entry) {
     return this.http.post<Entry>('/visitorBook/createEntry', entry, httpOptions).pipe(
-      tap(entries => console.log(entry)),
-      catchError(this.handleError([]))
+      tap(entries => console.log(entry))
     );
   }
 

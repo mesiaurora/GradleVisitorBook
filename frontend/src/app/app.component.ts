@@ -10,8 +10,9 @@ import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms'
 import { VisitorBook } from './visitor-book/visitor-book.model';
 import { Visitor } from './visitor/visitor.model';
 import { VisitorService } from './visitor/visitor.service';
-import { Entry } from './entry.model'
+import { Entry } from './entry/entry.model'
 import { EntryComponent } from './entry/entry.component'
+import { EntryService } from './entry/entry.service';
 
 export interface Testing {
   value: string;
@@ -21,7 +22,7 @@ export interface Testing {
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [VisitorService],
+  providers: [VisitorService, EntryService],
 
 })
 
@@ -36,7 +37,7 @@ export class AppComponent implements OnInit {
   // TODO: remove this when fully tested
   testing: Testing[] = [{value: 'Camel'}, {value: 'Horse'}, {value: 'Elephant'}]
 
-  constructor(private visitorService : VisitorService, entryService : EntryService, fb: FormBuilder) {
+  constructor(private visitorService : VisitorService, private entryService : EntryService, fb: FormBuilder) {
     this.sampleform = fb.group({
             'visitorId': [null] })
   }
@@ -54,7 +55,7 @@ export class AppComponent implements OnInit {
 
   // Get entries for the visitor book
   getEntries() {
-    this.entryService.getEntries().subscrive(res => this.entries = res, error => this.errorMessage = <any>error);
+    this.entryService.getEntries().subscribe(res => this.entries = res, error => this.errorMessage = <any>error);
   }
 
 }

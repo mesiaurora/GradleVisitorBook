@@ -6,7 +6,7 @@ import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatNativeDateModule} from '@angular/material';
 import { platformBrowserDynamic} from '@angular/platform-browser-dynamic';
-import { DemoMaterialModule} from '../material-module';
+import { DemoMaterialModule} from '../material.module';
 import { RouterModule, Routes } from '@angular/router';
 import { VisitorComponent } from './visitor/visitor.component';
 import { VisitorBookComponent } from './visitor-book/visitor-book.component';
@@ -33,6 +33,7 @@ import { HeaderBarComponent } from './header-bar/header-bar.component';
     DemoMaterialModule,
     MatNativeDateModule,
     ReactiveFormsModule,
+    RouterModule,
   ],
   bootstrap: [
     AppComponent

@@ -1,20 +1,34 @@
+<div>
 
-<div class="col-md-6">
-  <h2> Visitor</h2>
-  <table class="table table-striped">
-    <thead>
-    <tr>
-      <th>Id</th>
-      <th>Name</th>
-      <th>Relationship</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let visitor of visitors">
-      <td class="hidden">{{visitor.id}}</td>
-      <td>{{visitor.name}}</td>
-      <td>{{visitor.relationship}}</td>
-    </tr>
-    </tbody>
-  </table>
+  <a mat-stroked-button color="accent" routerLink="/visitor-book" routerLinkActive="active">Read all entries</a>
+  <mat-form-field>
+    <mat-select placeholder="Select from visitors">
+      <mat-option *ngFor="let visitor of visitors"
+                  value={{visitor.visitorId}}>>
+        {{visitor.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br>
+  <br>
+  <a mat-stroked-button color="accent" routerLink="/visitor-book" routerLinkActive="active">Read by visitor</a>
 </div>
+<!--<div class="col-md-6">-->
+  <!--<h2> Visitor</h2>-->
+  <!--<table class="table table-striped">-->
+    <!--<thead>-->
+    <!--<tr>-->
+      <!--<th>Id</th>-->
+      <!--<th>Name</th>-->
+      <!--<th>Relationship</th>-->
+    <!--</tr>-->
+    <!--</thead>-->
+    <!--<tbody>-->
+    <!--<tr *ngFor="let visitor of visitors">-->
+      <!--<td class="hidden">{{visitor.id}}</td>-->
+      <!--<td>{{visitor.name}}</td>-->
+      <!--<td>{{visitor.relationship}}</td>-->
+    <!--</tr>-->
+    <!--</tbody>-->
+  <!--</table>-->
+<!--</div>-->

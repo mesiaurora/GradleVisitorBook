@@ -3,6 +3,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
+// Imports from own packages
+import { EntryFormComponent } from '../entry-form/entry-form.component'
+import { Entry } from '../entry/entry.model';
+import { EntryService } from '../entry/entry.service';
+import { EntryComponent } from '../entry/entry.component'
+import { Visitor } from '../visitor/visitor.model'
+
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
@@ -17,16 +24,4 @@ export class VisitorBookService {
   constructor(private http: HttpClient) {
   }
 
-  handleError(error: Response | any) {
-      let errMsg: string;
-      if (error instanceof Response) {
-          const body = error.json() || '';
-          const err = body.error || JSON.stringify(body);
-          errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
-      } else {
-          errMsg = error.message ? error.message : error.toString();
-      }
-      console.error(errMsg);
-      return Observable.throw(errMsg);
-   }
 }

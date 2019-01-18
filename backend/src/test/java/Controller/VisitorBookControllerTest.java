@@ -21,31 +21,31 @@ import static org.junit.Assert.*;
  * @author keamesi
  */
 @RunWith(SpringRunner.class)
-@WebMvcTest(value = VisitorBookController.class)
+//@WebMvcTest(value = VisitorBookController.class)
 public class VisitorBookControllerTest {
 
-    @MockBean
-    private VisitorBookController controller;
-
-    @Autowired
-    private WebApplicationContext webAppContext;
-
-    @Autowired
-    private MockMvc mockMvc;
-
-    @MockBean
-    private VisitorRepository visitorRepo;
-
-    @MockBean
-    private VisitorEntryRepository entryRepo;
-
-    @MockBean
-    private VisitorBookRepository bookRepo;
+//    @MockBean
+//    private VisitorBookController controller;
+//
+//    @Autowired
+//    private WebApplicationContext webAppContext;
+//
+//    @Autowired
+//    private MockMvc mockMvc;
+//
+//    @MockBean
+//    private VisitorRepository visitorRepo;
+//
+//    @MockBean
+//    private VisitorEntryRepository entryRepo;
+//
+//    @MockBean
+//    private VisitorBookRepository bookRepo;
 
     @Before
-    public void setUp() {
-        mockMvc = MockMvcBuilders.webAppContextSetup(webAppContext).build();
-    }
+//    public void setUp() {
+//        mockMvc = MockMvcBuilders.webAppContextSetup(webAppContext).build();
+//    }
 
     @After
     public void tearDown() {

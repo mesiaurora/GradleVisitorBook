@@ -24,7 +24,7 @@ export class VisitorService {
 
   // Get a list of visitors from API
   getVisitor(): Observable<Visitor[]> {
-    return this.http.get('/visitorBook/getVisitors')
+    return this.http.get('http://localhost:8666/visitorBook/getVisitors')
         .map(res => res.json())
         .catch(this.handleError);
   }

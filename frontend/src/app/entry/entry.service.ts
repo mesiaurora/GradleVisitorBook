@@ -7,7 +7,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 // Imports from own packages
 import { Entry } from './entry.model'
-import { EntryComponent } from './entry/entry.component'
+import { EntryComponent } from './entry.component'
 
 
 const httpOptions = {
@@ -24,7 +24,7 @@ export class EntryService {
 
   // Get a list of entries from API
   getEntries(): Observable<Entry[]> {
-    return this.http.get('/visitorBook/getEntries')
+    return this.http.get('http://localhost:8666/visitorBook/getEntries')
         .map(res => res.json())
         .catch(this.handleError);
   }
