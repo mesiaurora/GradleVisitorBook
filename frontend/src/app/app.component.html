@@ -1,55 +1,21 @@
 
-
-
-<div class="row">
-  <div class="col-md-12">
-    <app-header-bar> Loading header </app-header-bar>
-  </div>
-</div>
 <h3>Visitor book</h3>
-<!--<div class="row">-->
-  <!--<div class="col-md-3">-->
-    <!--&lt;!&ndash;<app-side-bar-navigation> </app-side-bar-navigation>&ndash;&gt;-->
-  <!--</div>-->
-  <!--<div class="col-md-3">-->
-  <!--&lt;!&ndash;<router-outlet></router-outlet>&ndash;&gt;-->
-  <!--<mat-form-field>-->
-  <!--<mat-select placeholder="Select from visitors">-->
-    <!--<mat-option *ngFor="let visitor of visitors"-->
-                <!--value={{visitor.visitorId}}>>-->
-      <!--{{visitor.name}}-->
-    <!--</mat-option>-->
-  <!--</mat-select>-->
-  <!--</mat-form-field>-->
-  <!--<br>-->
-  <!--<br>-->
-  <!--&lt;!&ndash;<a mat-stroked-button color="accent" routerLink="/visitor-book" routerLinkActive="active">Read by visitor</a>&ndash;&gt;-->
-<!--</div>-->
+<div class="app-container">
+  <app-header-bar> Loading header </app-header-bar>
 
 
+  <mat-sidenav-container style="height:100%" class="mat-sidenav-container">
 
-<div>
-  <mat-sidenav-container class="side-bar-navigation" style="height:100%">
-    <mat-sidenav #sidenav mode="side" opened="false">
-      <!--<side-nav-menu title='SideBar'>-->
-        <!--&lt;!&ndash;<side-nav-item route="/state" title="Menu State"></side-nav-item>&ndash;&gt;-->
-        <!--&lt;!&ndash;<side-nav-item route="/entry-form" title="Entry Form"></side-nav-item>&ndash;&gt;-->
-        <!--<side-nav-group>-->
-          <!--&lt;!&ndash;<side-nav-item route="/visitorbook" title="VisitorBook"></side-nav-item>&ndash;&gt;-->
-        <!--</side-nav-group>-->
-        <!--<side-nav-x-group title="submenu 5">-->
-          <!--&lt;!&ndash;<side-nav-item route="/visitor" title="Visitor"></side-nav-item>&ndash;&gt;-->
-          <!--<li>LOL</li>>-->
-        <!--</side-nav-x-group>-->
-      <!--</side-nav-menu>-->
+    <mat-sidenav class="mat-sidenav" position="start" mode="side" [opened]="true">
+      <app-side-bar-navigation>Testing...</app-side-bar-navigation>
     </mat-sidenav>
+    <mat-sidenav-content class="mat-sidenav-content">
+      <!--<section>-->
+      <!--<center>-->
+      <!--<app-visitor-book></app-visitor-book>-->
 
-
-    <!--<mat-toolbar color="primary">-->
-      <!--<button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>-->
-    <!--</mat-toolbar>-->
-
-    <div style="text-align:center;width:100%">
+      <!--</center>-->
+      <!--</section>-->
       <mat-form-field>
         <mat-select placeholder="Select from visitors">
           <mat-option *ngFor="let visitor of visitors"
@@ -58,22 +24,12 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
-    </div>
+    </mat-sidenav-content>
 
   </mat-sidenav-container>
-</div>
-<!--<div>-->
-  <!--<label>Language:</label>-->
-  <!--<select  [formControl]="sampleform.controls['languageID']">-->
-    <!--<option value="0">&#45;&#45;Select&#45;&#45;</option>-->
-    <!--<option *ngFor="let lang of languages"-->
-            <!--value={{lang.languageID}}>-->
-      <!--{{lang.language}}-->
-    <!--</option>-->
-  <!--</select>-->
-<!--</div>-->
 
-<!--<router-outlet></router-outlet>-->
+</div>
+
 
 
 
